@@ -1,0 +1,33 @@
+name: coronavirus
+description: A new Flutter project.
+
+publish_to: 'none' 
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.7.0 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+
+  get: ^4.3.4
+  fl_chart: ^0.36.2
+  google_fonts: ^2.1.0
+  introduction_screen: ^2.1.0
+  ms_undraw: ^3.0.0+0
+  curved_navigation_bar: ^1.0.1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+flutter:
+  uses-material-design: true
+  assets:
+     - assets/images/
+  fonts:
+     - family: iran_sans
+       fonts:
+         - asset: assets/fonts/IRAN-Sans-Regular.ttf
