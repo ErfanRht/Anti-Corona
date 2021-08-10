@@ -1,6 +1,8 @@
 import 'package:coronavirus/constants/colors.dart';
 import 'package:coronavirus/screens/base/base-controller.dart';
 import 'package:coronavirus/screens/base/pages/home/home.dart';
+import 'package:coronavirus/screens/base/pages/settings/settings.dart';
+import 'package:coronavirus/screens/base/pages/statistics/statistics.dart';
 import 'package:flutter/material.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/services.dart';
@@ -9,9 +11,9 @@ import 'package:get/get.dart';
 class Base extends StatelessWidget {
   final BaseController baseController = Get.put(BaseController());
   final List _body = [
+    SettingsScreen(),
     HomeScreen(),
-    HomeScreen(),
-    HomeScreen(),
+    StatisticsScreen(),
   ];
   @override
   Widget build(BuildContext context) {
@@ -35,18 +37,18 @@ class Base extends StatelessWidget {
             color: kPrimaryColor,
             items: <Widget>[
               Icon(
-                Icons.bar_chart_rounded,
-                size: 30,
+                Icons.settings_rounded,
+                size: 29,
                 color: Colors.white,
               ),
               Icon(
                 Icons.home_rounded,
-                size: 30,
+                size: 32,
                 color: Colors.white,
               ),
               Icon(
-                Icons.settings_rounded,
-                size: 30,
+                Icons.bar_chart_rounded,
+                size: 40,
                 color: Colors.white,
               ),
             ],

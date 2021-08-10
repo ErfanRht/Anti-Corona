@@ -27,6 +27,7 @@ flutter:
   uses-material-design: true
   assets:
      - assets/images/
+     - assets/images/prevention/
   fonts:
      - family: iran_sans
        fonts:
