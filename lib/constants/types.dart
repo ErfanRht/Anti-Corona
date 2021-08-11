@@ -1,0 +1,1 @@
+enum StatisticsTabs { IRAN, WORLD }

@@ -30,7 +30,7 @@ class Base extends StatelessWidget {
           backgroundColor: kBackgroundColor,
           body: _body.elementAt(_.currentPage),
           bottomNavigationBar: CurvedNavigationBar(
-            height: 75,
+            height: 70,
             index: 1,
             animationDuration: Duration(milliseconds: 500),
             backgroundColor: kBackgroundColor,

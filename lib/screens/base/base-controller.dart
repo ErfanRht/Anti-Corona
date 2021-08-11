@@ -5,7 +5,6 @@ class BaseController extends GetxController {
 
   updateBase({int newCurrentPage}) {
     currentPage = newCurrentPage != null ? newCurrentPage : currentPage;
-    print(newCurrentPage);
     update();
   }
 }
