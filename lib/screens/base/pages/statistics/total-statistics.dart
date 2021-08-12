@@ -14,7 +14,7 @@ class TotalStatistics extends StatelessWidget {
               height: 100,
               width: (MediaQuery.of(context).size.width - 30) / 2,
               decoration: BoxDecoration(
-                  color: kSecondaryColor,
+                  color: Color(0xffFFB25A),
                   borderRadius: BorderRadius.circular(10)),
               child: Column(
                 children: [

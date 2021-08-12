@@ -2,6 +2,7 @@ import 'package:coronavirus/constants/colors.dart';
 import 'package:coronavirus/constants/routes.dart';
 import 'package:coronavirus/screens/base/base.dart';
 import 'package:coronavirus/screens/introduction/introduction.dart';
+import 'package:coronavirus/screens/loading/loading.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -34,6 +35,7 @@ class App extends StatelessWidget {
       ),
       initialRoute: base_route,
       routes: {
+        loading_route: (context) => LoadingScreen(),
         base_route: (context) => Base(),
         intro_route: (context) => IntroScreen()
       },

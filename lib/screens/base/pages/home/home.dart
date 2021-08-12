@@ -1,6 +1,6 @@
 import 'package:coronavirus/constants/colors.dart';
-import 'package:coronavirus/screens/base/pages/home/app-bar.dart';
-import 'package:coronavirus/screens/base/pages/home/prevention.dart';
+import 'package:coronavirus/screens/base/pages/home/app-bar/app-bar.dart';
+import 'package:coronavirus/screens/base/pages/home/prevention/prevention.dart';
 import 'package:coronavirus/screens/base/pages/home/state.dart';
 import 'package:flutter/material.dart';
 

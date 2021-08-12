@@ -1,4 +1,5 @@
 import 'package:coronavirus/constants/colors.dart';
+import 'package:coronavirus/screens/base/pages/home/app-bar/make-call.dart';
 import 'package:flutter/material.dart';
 
 class HomeAppBar extends StatelessWidget {
@@ -87,41 +88,7 @@ class HomeAppBar extends StatelessWidget {
               ],
             ),
           ),
-          Center(
-            child: InkWell(
-              onTap: () {},
-              child: Container(
-                margin: EdgeInsets.only(top: 15),
-                width: MediaQuery.of(context).size.width - 40,
-                height: 55,
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(25),
-                    color: Color(0xffFF4B58)),
-                child: Center(
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Icon(
-                        Icons.phone_rounded,
-                        size: 26,
-                        color: Colors.white,
-                      ),
-                      SizedBox(
-                        width: 5,
-                      ),
-                      Text(
-                        "همین حالا تماس بگیرید!",
-                        style: TextStyle(color: Colors.white, fontSize: 22.5),
-                      ),
-                      SizedBox(
-                        width: 10,
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-            ),
-          )
+          MakeCallButton()
         ],
       ),
     );
