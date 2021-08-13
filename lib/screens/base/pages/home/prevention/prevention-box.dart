@@ -16,6 +16,8 @@ class _PreventionBoxState extends State<PreventionBox> {
   String image;
   String url;
 
+  double _opacity;
+  EdgeInsets _padding;
   bool onHover;
   @override
   void initState() {
@@ -40,7 +42,11 @@ class _PreventionBoxState extends State<PreventionBox> {
             'https://www.irna.ir/news/84065765/%D9%85%D8%A7%D8%B3%DA%A9-%D8%B2%D8%AF%D9%86-%D9%88-%D9%81%D8%A7%D8%B5%D9%84%D9%87-%DA%AF%D8%B0%D8%A7%D8%B1%DB%8C-%D8%A7%D8%AC%D8%AA%D9%85%D8%A7%D8%B9%DB%8C-%D8%AF%D9%88-%D8%B1%D8%A7%D9%87%DA%A9%D8%A7%D8%B1-%D8%B3%D8%A7%D8%AF%D9%87-%D8%A8%D8%B1%D8%A7%DB%8C-%D9%85%D9%87%D8%A7%D8%B1-%DA%A9%D8%B1%D9%88%D9%86%D8%A7';
         break;
     }
+    _opacity = 0;
+    _padding = EdgeInsets.only(top: 15);
     onHover = false;
+
+    animationController();
   }
 
   @override
@@ -67,22 +73,53 @@ class _PreventionBoxState extends State<PreventionBox> {
       child: AnimatedOpacity(
         opacity: onHover ? 0.5 : 1,
         duration: Duration(milliseconds: 150),
-        child: Column(
-          children: [
-            Image.asset(
-              image,
-              height: 120,
+        child: AnimatedOpacity(
+          opacity: _opacity,
+          duration: Duration(milliseconds: 1000),
+          child: AnimatedPadding(
+            padding: _padding,
+            duration: Duration(milliseconds: 500),
+            child: Column(
+              children: [
+                Image.asset(
+                  image,
+                  height: 120,
+                ),
+                Center(
+                  child: Text(
+                    text,
+                    style: TextStyle(fontSize: 20),
+                  ),
+                )
+              ],
             ),
-            Center(
-              child: Text(
-                text,
-                style: TextStyle(fontSize: 20),
-              ),
-            )
-          ],
+          ),
         ),
       ),
     );
+  }
+
+  animationController() async {
+    await Future.delayed(Duration(milliseconds: 250));
+    if (widget.prevention == Prevention.DISTANCE) {
+      ;
+      setState(() {
+        _opacity = 1;
+        _padding = EdgeInsets.only(bottom: 15);
+      });
+    } else if (widget.prevention == Prevention.WASH_HAND) {
+      await Future.delayed(Duration(milliseconds: 500));
+      setState(() {
+        _opacity = 1;
+        _padding = EdgeInsets.only(bottom: 15);
+      });
+    } else if (widget.prevention == Prevention.MASK) {
+      await Future.delayed(Duration(milliseconds: 1000));
+      setState(() {
+        _opacity = 1;
+        _padding = EdgeInsets.only(bottom: 15);
+      });
+    }
   }
 
   Future<void> _launchInBrowser({@required String url}) async {

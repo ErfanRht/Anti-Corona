@@ -20,6 +20,7 @@ dependencies:
   ms_undraw: ^3.0.0+0
   curved_navigation_bar: ^1.0.1
   url_launcher: ^6.0.9
+  flutter_spinkit: ^5.0.0
 
 dev_dependencies:
   flutter_test:

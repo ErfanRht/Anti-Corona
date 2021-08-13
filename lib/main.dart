@@ -33,7 +33,7 @@ class App extends StatelessWidget {
         fontFamily: 'iran_sans',
         primarySwatch: kPrimaryColor,
       ),
-      initialRoute: base_route,
+      initialRoute: loading_route,
       routes: {
         loading_route: (context) => LoadingScreen(),
         base_route: (context) => Base(),
