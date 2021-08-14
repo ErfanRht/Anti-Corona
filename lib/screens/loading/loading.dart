@@ -4,8 +4,12 @@ import 'package:coronavirus/screens/loading/spin-kit.dart';
 import 'package:flutter/material.dart';
 
 class LoadingScreen extends StatelessWidget {
+  bool _isDark;
   @override
   Widget build(BuildContext context) {
+    final Brightness brightnessValue =
+        MediaQuery.of(context).platformBrightness;
+    _isDark = brightnessValue == Brightness.dark;
     pass(context);
 
     return Scaffold(

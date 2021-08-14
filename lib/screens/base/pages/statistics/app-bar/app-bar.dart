@@ -1,6 +1,6 @@
 import 'package:coronavirus/constants/colors.dart';
-import 'package:coronavirus/screens/base/pages/statistics/switch-tabs.dart';
-import 'package:coronavirus/screens/base/pages/statistics/total-statistics.dart';
+import 'package:coronavirus/screens/base/pages/statistics/app-bar/switch-tabs.dart';
+import 'package:coronavirus/screens/base/pages/statistics/app-bar/total-statistics.dart';
 import 'package:flutter/material.dart';
 
 class StatisticsAppBar extends StatelessWidget {

@@ -1,5 +1,5 @@
 import 'package:coronavirus/constants/colors.dart';
-import 'package:coronavirus/screens/base/pages/statistics/app-bar.dart';
+import 'package:coronavirus/screens/base/pages/statistics/app-bar/app-bar.dart';
 import 'package:coronavirus/screens/base/pages/statistics/body.dart';
 import 'package:flutter/material.dart';
 
