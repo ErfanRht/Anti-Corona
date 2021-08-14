@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 // ignore: must_be_immutable
-class StatisticsBox extends StatefulWidget {
+class StatisticsBox2 extends StatefulWidget {
   String title;
   String state;
   Color backgroundColor;
@@ -9,7 +9,7 @@ class StatisticsBox extends StatefulWidget {
   EdgeInsets margin;
   double width;
   int index;
-  StatisticsBox(
+  StatisticsBox2(
       {@required this.title,
       @required this.state,
       @required this.backgroundColor,
@@ -19,10 +19,10 @@ class StatisticsBox extends StatefulWidget {
       @required this.index});
 
   @override
-  _StatisticsBoxState createState() => _StatisticsBoxState();
+  _StatisticsBox2State createState() => _StatisticsBox2State();
 }
 
-class _StatisticsBoxState extends State<StatisticsBox> {
+class _StatisticsBox2State extends State<StatisticsBox2> {
   String title;
   String state;
   Color backgroundColor;
@@ -77,10 +77,10 @@ class _StatisticsBoxState extends State<StatisticsBox> {
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
                 Padding(
-                  padding: const EdgeInsets.only(top: 20, left: 10),
+                  padding: const EdgeInsets.only(top: 20, left: 5),
                   child: Text(
                     state,
-                    style: TextStyle(color: textColor, fontSize: 22.5),
+                    style: TextStyle(color: textColor, fontSize: 21),
                   ),
                 ),
               ],

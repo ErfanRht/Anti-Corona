@@ -1,5 +1,7 @@
 import 'package:coronavirus/constants/types.dart';
+import 'package:coronavirus/screens/base/pages/statistics/statistics-controller.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class StatisticsSwitchTabs extends StatefulWidget {
   @override
@@ -7,10 +9,25 @@ class StatisticsSwitchTabs extends StatefulWidget {
 }
 
 class _StatisticsSwitchTabsState extends State<StatisticsSwitchTabs> {
-  EdgeInsets selectedMargin = EdgeInsets.zero;
-  StatisticsTabs selectedTab = StatisticsTabs.IRAN;
+  final StatisticsPageController statisticsPage =
+      Get.put(StatisticsPageController());
+
+  EdgeInsets selectedMargin;
+  StatisticsTabs selectedTab;
+
+  @override
+  void initState() {
+    super.initState();
+    selectedMargin = EdgeInsets.zero;
+    selectedTab = statisticsPage.selectedTab;
+  }
+
   @override
   Widget build(BuildContext context) {
+    if (selectedTab == StatisticsTabs.WORLD) {
+      selectedMargin = EdgeInsets.only(
+          right: (MediaQuery.of(context).size.width - 87.5) / 2);
+    }
     return Container(
       margin: EdgeInsets.only(top: 15),
       padding: EdgeInsets.all(4),
@@ -127,7 +144,6 @@ class _StatisticsSwitchTabsState extends State<StatisticsSwitchTabs> {
   }
 
   switchTab() {
-    print("tapped");
     if (selectedTab == StatisticsTabs.IRAN) {
       setState(() {
         selectedTab = StatisticsTabs.WORLD;
@@ -140,5 +156,6 @@ class _StatisticsSwitchTabsState extends State<StatisticsSwitchTabs> {
         selectedMargin = EdgeInsets.zero;
       });
     }
+    Get.find<StatisticsPageController>().updateState(newTab: selectedTab);
   }
 }
