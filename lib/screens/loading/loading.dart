@@ -1,4 +1,5 @@
 import 'package:coronavirus/constants/routes.dart';
+import 'package:coronavirus/constants/types.dart';
 import 'package:coronavirus/controllers/corona-statistics.dart';
 import 'package:coronavirus/models/first-enter.dart';
 import 'package:coronavirus/screens/loading/controller.dart';
@@ -22,14 +23,17 @@ class _LoadingScreenState extends State<LoadingScreen> {
   final LoadingController loadingController = Get.put(LoadingController());
 
   bool isFirstEnter;
+  LoadingStatus loadingStatus;
 
   @override
   void initState() {
     super.initState();
     isFirstEnter = false;
+    loadingStatus = LoadingStatus.LOADING;
     firstEnter(context);
-    getData();
-    pass(context);
+    getData().then((response) {
+      if (response) pass(context);
+    });
   }
 
   @override
@@ -63,7 +67,8 @@ class _LoadingScreenState extends State<LoadingScreen> {
   }
 
   pass(BuildContext context) async {
-    await Future.delayed(Duration(milliseconds: 3000));
+    await Future.delayed(Duration(milliseconds: 1500));
+
     if (isFirstEnter) {
       Navigator.pushReplacementNamed(context, intro_route);
     } else {
@@ -71,7 +76,7 @@ class _LoadingScreenState extends State<LoadingScreen> {
     }
   }
 
-  getData() async {
+  Future<bool> getData() async {
     var url = Uri.parse('https://erfanrht.pythonanywhere.com/get-statistics');
     var response;
     try {
@@ -96,11 +101,20 @@ class _LoadingScreenState extends State<LoadingScreen> {
           newGlobalNewCases: globalStatistics['new_cases'],
           newGlobalNewDeaths: globalStatistics['new_deaths'],
         );
+        Get.find<LoadingController>()
+            .updateLoading(newLoadingStatus: LoadingStatus.LOADED);
+        return true;
       } else {
         print("response: ${response.statusCode}");
+        Get.find<LoadingController>()
+            .updateLoading(newLoadingStatus: LoadingStatus.LOAD_FAILED);
+        return false;
       }
     } catch (e) {
       print(e);
+      Get.find<LoadingController>()
+          .updateLoading(newLoadingStatus: LoadingStatus.LOAD_FAILED);
+      return false;
     }
   }
 

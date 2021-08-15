@@ -1,10 +1,11 @@
+import 'package:coronavirus/constants/types.dart';
 import 'package:get/get.dart';
 
 class LoadingController extends GetxController {
-  bool isFirstEnter = false;
+  LoadingStatus loadingStatus = LoadingStatus.LOADING;
 
-  updateLoading(bool newEnterStatus) {
-    isFirstEnter = newEnterStatus != null ? newEnterStatus : isFirstEnter;
+  updateLoading({LoadingStatus newLoadingStatus}) {
+    loadingStatus = newLoadingStatus != null ? newLoadingStatus : loadingStatus;
 
     update();
   }
