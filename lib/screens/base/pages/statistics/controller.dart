@@ -4,9 +4,13 @@ import 'package:get/get.dart';
 
 class StatisticsPageController extends GetxController {
   StatisticsTabs selectedTab = StatisticsTabs.IRAN;
+  bool animationCompleted = false;
 
-  updateState({StatisticsTabs newTab}) {
+  updateState({StatisticsTabs newTab, bool newAnimationCompleted}) {
     selectedTab = newTab != null ? newTab : selectedTab;
+    animationCompleted = newAnimationCompleted != null
+        ? newAnimationCompleted
+        : animationCompleted;
     update();
   }
 }

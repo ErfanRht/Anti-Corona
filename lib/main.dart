@@ -30,9 +30,15 @@ class App extends StatelessWidget {
       title: 'CoronaVirus',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        fontFamily: 'iran_sans',
-        primarySwatch: kPrimaryColor,
-      ),
+          fontFamily: 'iran_sans',
+          primaryColor: PrimaryColor(),
+          accentColor: PrimaryColor(),
+          primaryColorLight: PrimaryColor(),
+          buttonColor: PrimaryColor(),
+          elevatedButtonTheme: ElevatedButtonThemeData(
+              style: ButtonStyle(backgroundColor: PrimaryColor()))
+          // primarySwatch: kPrimaryColor,
+          ),
       initialRoute: loading_route,
       routes: {
         loading_route: (context) => LoadingScreen(),

@@ -1,6 +1,8 @@
 import 'package:coronavirus/constants/colors.dart';
 import 'package:coronavirus/constants/types.dart';
+import 'package:coronavirus/screens/base/pages/home/controller.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 // ignore: must_be_immutable
@@ -12,6 +14,7 @@ class PreventionBox extends StatefulWidget {
 }
 
 class _PreventionBoxState extends State<PreventionBox> {
+  final HomeController homeController = Get.put(HomeController());
   String text;
   String image;
   String url;
@@ -42,11 +45,16 @@ class _PreventionBoxState extends State<PreventionBox> {
             'https://www.irna.ir/news/84065765/%D9%85%D8%A7%D8%B3%DA%A9-%D8%B2%D8%AF%D9%86-%D9%88-%D9%81%D8%A7%D8%B5%D9%84%D9%87-%DA%AF%D8%B0%D8%A7%D8%B1%DB%8C-%D8%A7%D8%AC%D8%AA%D9%85%D8%A7%D8%B9%DB%8C-%D8%AF%D9%88-%D8%B1%D8%A7%D9%87%DA%A9%D8%A7%D8%B1-%D8%B3%D8%A7%D8%AF%D9%87-%D8%A8%D8%B1%D8%A7%DB%8C-%D9%85%D9%87%D8%A7%D8%B1-%DA%A9%D8%B1%D9%88%D9%86%D8%A7';
         break;
     }
-    _opacity = 0;
-    _padding = EdgeInsets.only(top: 15);
     onHover = false;
+    if (!homeController.animationCompleed) {
+      _opacity = 0;
+      _padding = EdgeInsets.only(top: 15);
 
-    animationController();
+      animationController();
+    } else {
+      _opacity = 1;
+      _padding = EdgeInsets.only(bottom: 15);
+    }
   }
 
   @override
@@ -102,7 +110,6 @@ class _PreventionBoxState extends State<PreventionBox> {
   animationController() async {
     await Future.delayed(Duration(milliseconds: 250));
     if (widget.prevention == Prevention.DISTANCE) {
-      ;
       setState(() {
         _opacity = 1;
         _padding = EdgeInsets.only(bottom: 15);
@@ -119,6 +126,7 @@ class _PreventionBoxState extends State<PreventionBox> {
         _opacity = 1;
         _padding = EdgeInsets.only(bottom: 15);
       });
+      Get.find<HomeController>().updateHome(newAnimationCompleed: true);
     }
   }
 

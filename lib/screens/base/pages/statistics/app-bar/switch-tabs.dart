@@ -1,5 +1,5 @@
 import 'package:coronavirus/constants/types.dart';
-import 'package:coronavirus/screens/base/pages/statistics/statistics-controller.dart';
+import 'package:coronavirus/screens/base/pages/statistics/controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -156,6 +156,7 @@ class _StatisticsSwitchTabsState extends State<StatisticsSwitchTabs> {
         selectedMargin = EdgeInsets.zero;
       });
     }
-    Get.find<StatisticsPageController>().updateState(newTab: selectedTab);
+    Get.find<StatisticsPageController>()
+        .updateState(newTab: selectedTab, newAnimationCompleted: false);
   }
 }

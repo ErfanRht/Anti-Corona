@@ -1,6 +1,5 @@
 import 'package:coronavirus/constants/colors.dart';
 import 'package:coronavirus/screens/base/base-controller.dart';
-import 'package:coronavirus/widgets/type-writer.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -19,8 +18,7 @@ class HomeState extends StatelessWidget {
         width: MediaQuery.of(context).size.width - 50,
         height: 130,
         decoration: BoxDecoration(
-            color: kPrimaryColor.withOpacity(0.7),
-            borderRadius: BorderRadius.circular(25)),
+            color: kSecondaryColor, borderRadius: BorderRadius.circular(25)),
         child: Column(
           children: [
             Flexible(

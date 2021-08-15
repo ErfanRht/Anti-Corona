@@ -1,7 +1,7 @@
 import 'package:coronavirus/constants/colors.dart';
 import 'package:coronavirus/constants/types.dart';
 import 'package:coronavirus/controllers/corona-statistics.dart';
-import 'package:coronavirus/screens/base/pages/statistics/statistics-controller.dart';
+import 'package:coronavirus/screens/base/pages/statistics/controller.dart';
 import 'package:coronavirus/widgets/statistics-box.dart';
 import 'package:coronavirus/widgets/statistics-box2.dart';
 import 'package:flutter/material.dart';

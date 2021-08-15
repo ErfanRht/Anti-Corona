@@ -1,39 +1,74 @@
 import 'package:coronavirus/constants/routes.dart';
 import 'package:coronavirus/controllers/corona-statistics.dart';
+import 'package:coronavirus/models/first-enter.dart';
+import 'package:coronavirus/screens/loading/controller.dart';
 import 'package:coronavirus/screens/loading/logo.dart';
 import 'package:coronavirus/screens/loading/spin-kit.dart';
+import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert' as convert;
 import 'package:flutter/material.dart';
 
-class LoadingScreen extends StatelessWidget {
+class LoadingScreen extends StatefulWidget {
+  @override
+  _LoadingScreenState createState() => _LoadingScreenState();
+}
+
+class _LoadingScreenState extends State<LoadingScreen> {
   final StatisticsController statisticsController =
       Get.put(StatisticsController());
+
+  final LoadingController loadingController = Get.put(LoadingController());
+
+  bool isFirstEnter;
+
   @override
-  Widget build(BuildContext context) {
+  void initState() {
+    super.initState();
+    isFirstEnter = false;
+    firstEnter(context);
     getData();
     pass(context);
+  }
 
-    return Scaffold(
-      backgroundColor: Colors.white,
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          SizedBox(),
-          SizedBox(),
-          Center(child: LoadingLogo()),
-          SizedBox(),
-          LoadingSpinkit(),
-          SizedBox(),
-        ],
-      ),
+  @override
+  Widget build(BuildContext context) {
+    SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
+        statusBarColor: Colors.transparent,
+        systemNavigationBarColor: Colors.transparent,
+        systemNavigationBarDividerColor: Colors.transparent,
+        systemNavigationBarIconBrightness: Brightness.dark,
+        statusBarIconBrightness: Brightness.dark,
+        statusBarBrightness: Brightness.light));
+
+    return GetBuilder<LoadingController>(
+      builder: (_) {
+        return Scaffold(
+          backgroundColor: Colors.white,
+          body: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              SizedBox(),
+              SizedBox(),
+              Center(child: LoadingLogo()),
+              SizedBox(),
+              LoadingSpinkit(),
+              SizedBox(),
+            ],
+          ),
+        );
+      },
     );
   }
 
   pass(BuildContext context) async {
     await Future.delayed(Duration(milliseconds: 3000));
-    Navigator.pushReplacementNamed(context, base_route);
+    if (isFirstEnter) {
+      Navigator.pushReplacementNamed(context, intro_route);
+    } else {
+      Navigator.pushReplacementNamed(context, base_route);
+    }
   }
 
   getData() async {
@@ -67,5 +102,14 @@ class LoadingScreen extends StatelessWidget {
     } catch (e) {
       print(e);
     }
+  }
+
+  firstEnter(BuildContext context) {
+    firstEnterModel().then((bool firstEnter) {
+      print(firstEnter);
+      setState(() {
+        isFirstEnter = firstEnter;
+      });
+    });
   }
 }

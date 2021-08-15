@@ -1,4 +1,6 @@
+import 'package:coronavirus/screens/base/pages/statistics/controller.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 // ignore: must_be_immutable
 class StatisticsBox extends StatefulWidget {
@@ -23,6 +25,8 @@ class StatisticsBox extends StatefulWidget {
 }
 
 class _StatisticsBoxState extends State<StatisticsBox> {
+  final StatisticsPageController statisticsController =
+      Get.put(StatisticsPageController());
   String title;
   String state;
   Color backgroundColor;
@@ -43,10 +47,14 @@ class _StatisticsBoxState extends State<StatisticsBox> {
     margin = widget.margin;
     width = widget.width;
     index = widget.index;
-
-    _opacity = 0;
-    _animationSpeed = 350;
-    animationController();
+    if (!statisticsController.animationCompleted) {
+      _opacity = 0;
+      _animationSpeed = 350;
+      animationController();
+    } else {
+      _opacity = 1;
+      _animationSpeed = 0;
+    }
   }
 
   @override
@@ -97,5 +105,10 @@ class _StatisticsBoxState extends State<StatisticsBox> {
     setState(() {
       _opacity = 1;
     });
+
+    if (index == 4) {
+      Get.find<StatisticsPageController>()
+          .updateState(newAnimationCompleted: true);
+    }
   }
 }
