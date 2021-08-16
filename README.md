@@ -1,4 +1,4 @@
-# coronavirus
+# anti_corona
 
 A new Flutter project.
 

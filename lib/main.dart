@@ -23,7 +23,7 @@ class App extends StatelessWidget {
         GlobalWidgetsLocalizations.delegate,
       ],
       supportedLocales: [const Locale('fa', '')],
-      title: 'CoronaVirus',
+      title: 'Anti Corona',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
           fontFamily: 'iran_sans',

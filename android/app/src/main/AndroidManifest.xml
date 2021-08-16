@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.coronavirus">
+    package="com.example.anti_corona">
     <uses-permission android:name="android.permission.INTERNET" />
     <queries>
       <intent>
@@ -12,7 +12,7 @@
       </intent>
     </queries>
    <application
-        android:label="coronavirus"
+        android:label="Anti Corona"
         android:icon="@mipmap/ic_launcher">
         <activity
             android:name=".MainActivity"
