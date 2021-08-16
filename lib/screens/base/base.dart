@@ -17,13 +17,6 @@ class Base extends StatelessWidget {
   ];
   @override
   Widget build(BuildContext context) {
-    SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
-        statusBarColor: Colors.transparent,
-        systemNavigationBarColor: kPrimaryColor,
-        systemNavigationBarDividerColor: Colors.transparent,
-        systemNavigationBarIconBrightness: Brightness.dark,
-        statusBarIconBrightness: Brightness.light,
-        statusBarBrightness: Brightness.light));
     return GetBuilder<BaseController>(
       builder: (_) {
         return Scaffold(

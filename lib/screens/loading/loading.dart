@@ -2,6 +2,7 @@ import 'package:coronavirus/constants/routes.dart';
 import 'package:coronavirus/constants/types.dart';
 import 'package:coronavirus/controllers/corona-statistics.dart';
 import 'package:coronavirus/models/first-enter.dart';
+import 'package:coronavirus/models/set-system-ui-overlay-style.dart';
 import 'package:coronavirus/screens/loading/controller.dart';
 import 'package:coronavirus/screens/loading/logo.dart';
 import 'package:coronavirus/screens/loading/spin-kit.dart';
@@ -38,14 +39,7 @@ class _LoadingScreenState extends State<LoadingScreen> {
 
   @override
   Widget build(BuildContext context) {
-    SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
-        statusBarColor: Colors.transparent,
-        systemNavigationBarColor: Colors.transparent,
-        systemNavigationBarDividerColor: Colors.transparent,
-        systemNavigationBarIconBrightness: Brightness.dark,
-        statusBarIconBrightness: Brightness.dark,
-        statusBarBrightness: Brightness.light));
-
+    setSystemUIOverlayStyle(systemUIOverlayStyle: SystemUIOverlayStyle.LIGHT);
     return GetBuilder<LoadingController>(
       builder: (_) {
         return Scaffold(

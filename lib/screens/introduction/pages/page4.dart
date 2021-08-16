@@ -24,7 +24,7 @@ class _IntroPage4State extends State<IntroPage4> {
             errorWidget: Icon(Icons.error_outline, color: Colors.red, size: 50),
           ),
           Text(
-            "خوش بگذره",
+            "بزن بریم",
             style: TextStyle(
               color: kPrimaryColor,
               fontSize: 27.5,

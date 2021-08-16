@@ -6,6 +6,8 @@ import 'package:coronavirus/screens/loading/loading.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'constants/types.dart';
+import 'models/set-system-ui-overlay-style.dart';
 
 void main() => runApp(App());
 
@@ -14,13 +16,7 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) {
     SystemChrome.setPreferredOrientations(
         [DeviceOrientation.portraitUp, DeviceOrientation.portraitDown]);
-    SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
-        statusBarColor: Colors.transparent,
-        systemNavigationBarColor: Colors.transparent,
-        systemNavigationBarDividerColor: Colors.transparent,
-        systemNavigationBarIconBrightness: Brightness.dark,
-        statusBarIconBrightness: Brightness.dark,
-        statusBarBrightness: Brightness.light));
+    setSystemUIOverlayStyle(systemUIOverlayStyle: SystemUIOverlayStyle.LIGHT);
     return MaterialApp(
       localizationsDelegates: [
         GlobalMaterialLocalizations.delegate,

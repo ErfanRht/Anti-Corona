@@ -1,11 +1,16 @@
 import 'package:coronavirus/constants/colors.dart';
+import 'package:coronavirus/controllers/corona-statistics.dart';
 import 'package:coronavirus/screens/base/base-controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class HomeState extends StatelessWidget {
+  final StatisticsController statisticsController =
+      Get.put(StatisticsController());
+
   @override
   Widget build(BuildContext context) {
+    final String iranNewlDeath = statisticsController.iranNewDeaths;
     return InkWell(
       onTap: () {
         Get.find<BaseController>().updateBase(newCurrentPage: 2);
@@ -23,7 +28,7 @@ class HomeState extends StatelessWidget {
           children: [
             Flexible(
                 child: Text(
-              "در 24 ساعت گذشته 536 هموطن بر اثر کرونا جان باختند.",
+              "در 24 ساعت گذشته $iranNewlDeath هموطن بر اثر کرونا جان باختند.",
               style: TextStyle(color: Colors.white, fontSize: 22.5),
             )),
             Padding(

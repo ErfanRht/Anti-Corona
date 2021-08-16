@@ -1,5 +1,7 @@
 import 'package:coronavirus/constants/colors.dart';
 import 'package:coronavirus/constants/routes.dart';
+import 'package:coronavirus/constants/types.dart';
+import 'package:coronavirus/models/set-system-ui-overlay-style.dart';
 import 'package:coronavirus/screens/introduction/pages/page1.dart';
 import 'package:coronavirus/screens/introduction/pages/page2.dart';
 import 'package:coronavirus/screens/introduction/pages/page3.dart';
@@ -18,13 +20,7 @@ class IntroScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
-        statusBarColor: Colors.transparent,
-        systemNavigationBarColor: kPrimaryColor,
-        systemNavigationBarDividerColor: Colors.transparent,
-        systemNavigationBarIconBrightness: Brightness.dark,
-        statusBarIconBrightness: Brightness.dark,
-        statusBarBrightness: Brightness.light));
+    setSystemUIOverlayStyle(systemUIOverlayStyle: SystemUIOverlayStyle.LIGHT);
     const bodyStyle = TextStyle(fontSize: 19.0);
 
     const pageDecoration = const PageDecoration(
