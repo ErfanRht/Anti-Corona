@@ -1,7 +1,7 @@
 import 'package:coronavirus/constants/colors.dart';
 import 'package:coronavirus/screens/base/base-controller.dart';
+import 'package:coronavirus/screens/base/pages/about/about.dart';
 import 'package:coronavirus/screens/base/pages/home/home.dart';
-import 'package:coronavirus/screens/base/pages/settings/settings.dart';
 import 'package:coronavirus/screens/base/pages/statistics/statistics.dart';
 import 'package:flutter/material.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
@@ -11,7 +11,7 @@ import 'package:get/get.dart';
 class Base extends StatelessWidget {
   final BaseController baseController = Get.put(BaseController());
   final List _body = [
-    SettingsScreen(),
+    AboutScreen(),
     HomeScreen(),
     StatisticsScreen(),
   ];
@@ -37,8 +37,8 @@ class Base extends StatelessWidget {
             color: kPrimaryColor,
             items: <Widget>[
               Icon(
-                Icons.settings_rounded,
-                size: 29,
+                Icons.data_usage_rounded,
+                size: 34,
                 color: Colors.white,
               ),
               Icon(

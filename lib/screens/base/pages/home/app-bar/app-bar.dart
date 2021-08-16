@@ -1,6 +1,8 @@
 import 'package:coronavirus/constants/colors.dart';
+import 'package:coronavirus/screens/base/base-controller.dart';
 import 'package:coronavirus/screens/base/pages/home/app-bar/make-call.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class HomeAppBar extends StatelessWidget {
   @override
@@ -74,18 +76,35 @@ class HomeAppBar extends StatelessWidget {
               ],
             ),
           ),
-          Container(
-            width: MediaQuery.of(context).size.width - 40,
-            child: Row(
-              children: [
-                Flexible(
-                  child: Text(
-                    'اگر هر یک از علائم ویروس کرونا را احساس می کنید، لطفا برای کمک فورا تماس بگیرید.',
-                    style: TextStyle(
-                        color: Colors.white.withOpacity(0.7), fontSize: 20),
-                  ),
-                ),
-              ],
+          GestureDetector(
+            onTap: () {
+              Get.find<BaseController>().updateBase(newCurrentPage: 0);
+            },
+            child: Container(
+              width: MediaQuery.of(context).size.width - 40,
+              child: Row(
+                children: [
+                  Flexible(
+                      child: RichText(
+                    text: TextSpan(
+                      text: 'اگر هر یک از ',
+                      style: TextStyle(
+                          color: Colors.white.withOpacity(0.7),
+                          fontSize: 20,
+                          fontFamily: 'iran_sans'),
+                      children: const <TextSpan>[
+                        TextSpan(
+                          text: 'علائم ویروس کرونا',
+                          style: TextStyle(color: Colors.white, fontSize: 20),
+                        ),
+                        TextSpan(
+                            text:
+                                '  را احساس می کنید، لطفا برای کمک فورا تماس بگیرید.'),
+                      ],
+                    ),
+                  )),
+                ],
+              ),
             ),
           ),
           MakeCallButton()
