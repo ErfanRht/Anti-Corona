@@ -8,6 +8,7 @@ class StatisticsController extends GetxController {
   String iranSeriousCases;
   String iranNewCases;
   String iranNewDeaths;
+  String iranNewRecovered;
   String globalTotalCases;
   String globalTotalDeaths;
   String globalTotalRecovered;
@@ -15,6 +16,7 @@ class StatisticsController extends GetxController {
   String globalSeriousCases;
   String globalNewCases;
   String globalNewDeaths;
+  String globalNewRecovered;
 
   updateStatistics(
       {String newIranTotalCases,
@@ -24,13 +26,15 @@ class StatisticsController extends GetxController {
       String newIranSeriousCases,
       String newIranNewCases,
       String newIranNewDeaths,
+      String newIranNewRecovered,
       String newGlobalTotalCases,
       String newGlobalTotalDeaths,
       String newGlobalTotalRecovered,
       String newGlobalActiveCases,
       String newGlobalSeriousCases,
       String newGlobalNewCases,
-      String newGlobalNewDeaths}) {
+      String newGlobalNewDeaths,
+      String newGlobalNewRecovered}) {
     iranTotalCases =
         newIranTotalCases != null ? newIranTotalCases : iranTotalCases;
     iranTotalDeaths =
@@ -44,6 +48,8 @@ class StatisticsController extends GetxController {
         newIranSeriousCases != null ? newIranSeriousCases : iranSeriousCases;
     iranNewCases = newIranNewCases != null ? newIranNewCases : iranNewCases;
     iranNewDeaths = newIranNewDeaths != null ? newIranNewDeaths : iranNewDeaths;
+    iranNewRecovered =
+        newIranNewRecovered != null ? newIranNewRecovered : iranNewRecovered;
     globalTotalCases =
         newGlobalTotalCases != null ? newGlobalTotalCases : globalTotalCases;
     globalTotalDeaths =
@@ -60,6 +66,10 @@ class StatisticsController extends GetxController {
         newGlobalNewCases != null ? newGlobalNewCases : globalNewCases;
     globalNewDeaths =
         newGlobalNewDeaths != null ? newGlobalNewDeaths : globalNewDeaths;
+    globalNewRecovered = newGlobalNewRecovered != null
+        ? newGlobalNewRecovered
+        : globalNewRecovered;
+
     update();
   }
 }

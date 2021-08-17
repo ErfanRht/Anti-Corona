@@ -12,6 +12,9 @@ Future<bool> firstEnterModel() async {
   if (firstEnter == true) {
     prefs.setBool('logged', true);
   }
+
+  // for debugging:
   // firstEnter = true;
+
   return firstEnter;
 }

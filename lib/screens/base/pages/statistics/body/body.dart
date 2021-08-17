@@ -71,7 +71,7 @@ class StatisticsBody extends StatelessWidget {
               children: [
                 StatisticsBox(
                   title: "بهبود یافتگان :",
-                  state: "26,911",
+                  state: statistics.iranNewRecovered,
                   backgroundColor: kPrimaryColor,
                   textColor: Colors.white,
                   margin: EdgeInsets.zero,
@@ -130,7 +130,7 @@ class StatisticsBody extends StatelessWidget {
               children: [
                 StatisticsBox2(
                   title: "بهبود یافتگان :",
-                  state: "26,911",
+                  state: statistics.globalNewRecovered,
                   backgroundColor: kPrimaryColor,
                   textColor: Colors.white,
                   margin: EdgeInsets.zero,

@@ -5,6 +5,7 @@ import 'package:coronavirus/screens/base/pages/about/controller.dart';
 import 'package:coronavirus/widgets/affects-item.dart';
 import 'package:coronavirus/widgets/affects-title.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:get/get.dart';
 import 'package:ms_undraw/ms_undraw.dart';
 
@@ -30,7 +31,10 @@ class AboutScreen extends StatelessWidget {
                   child: UnDraw(
                     color: Color(0xff1D2366),
                     illustration: UnDrawIllustration.medicine,
-                    placeholder: Text("...تصویر درحال بارگذاری است"),
+                    placeholder: SpinKitDoubleBounce(
+                      color: Colors.white,
+                      size: 30,
+                    ),
                     errorWidget:
                         Icon(Icons.error_outline, color: Colors.red, size: 50),
                   ),

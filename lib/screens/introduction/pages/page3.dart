@@ -1,5 +1,6 @@
 import 'package:coronavirus/constants/colors.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:ms_undraw/ms_undraw.dart';
 
 class IntroPage3 extends StatefulWidget {
@@ -20,7 +21,10 @@ class _IntroPage3State extends State<IntroPage3> {
             height: MediaQuery.of(context).size.width - 150,
             width: MediaQuery.of(context).size.width - 100,
             illustration: UnDrawIllustration.medicine,
-            placeholder: Text("...تصویر درحال بارگذاری است"),
+            placeholder: SpinKitDoubleBounce(
+              color: kPrimaryColor,
+              size: 50,
+            ),
             errorWidget: Icon(Icons.error_outline, color: Colors.red, size: 50),
           ),
           Text(
