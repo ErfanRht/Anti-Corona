@@ -20,18 +20,21 @@ class HomePrevention extends StatelessWidget {
         ),
         Padding(
           padding: const EdgeInsets.only(right: 10, left: 10),
-          child: Row(
-            children: [
-              PreventionBox(prevention: Prevention.MASK),
-              SizedBox(
-                width: 5,
-              ),
-              PreventionBox(prevention: Prevention.WASH_HAND),
-              SizedBox(
-                width: 5,
-              ),
-              PreventionBox(prevention: Prevention.DISTANCE)
-            ],
+          child: SingleChildScrollView(
+            physics: BouncingScrollPhysics(parent: ClampingScrollPhysics()),
+            child: Row(
+              children: [
+                PreventionBox(prevention: Prevention.MASK),
+                SizedBox(
+                  width: 5,
+                ),
+                PreventionBox(prevention: Prevention.WASH_HAND),
+                SizedBox(
+                  width: 5,
+                ),
+                PreventionBox(prevention: Prevention.DISTANCE)
+              ],
+            ),
           ),
         )
       ],

@@ -15,8 +15,10 @@ class HomeScreen extends StatelessWidget {
     setSystemUIOverlayStyle(systemUIOverlayStyle: SystemUIOverlayStyle.DARK);
     return Scaffold(
       backgroundColor: kBackgroundColor,
-      body: Column(
-        children: [HomeAppBar(), HomePrevention(), HomeState()],
+      body: SingleChildScrollView(
+        child: Column(
+          children: [HomeAppBar(), HomePrevention(), HomeState()],
+        ),
       ),
     );
   }
