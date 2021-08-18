@@ -57,6 +57,7 @@ pass(BuildContext context) async {
   await Future.delayed(Duration(milliseconds: 1500));
 
   if (loadingController.isFirstEnter) {
+    print("navigate to intro");
     Navigator.pushReplacementNamed(context, intro_route);
   } else {
     Navigator.pushReplacementNamed(context, base_route);

@@ -19,38 +19,46 @@ class Base extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetBuilder<BaseController>(
       builder: (_) {
-        return Scaffold(
-          backgroundColor: kBackgroundColor,
-          body: _body.elementAt(_.currentPage),
-          bottomNavigationBar: CurvedNavigationBar(
-            height: 70,
-            index: _.currentPage,
-            animationDuration: Duration(milliseconds: 500),
+        return WillPopScope(
+          onWillPop: closeApp,
+          child: Scaffold(
             backgroundColor: kBackgroundColor,
-            color: kPrimaryColor,
-            items: <Widget>[
-              Icon(
-                Icons.data_usage_rounded,
-                size: 34,
-                color: Colors.white,
-              ),
-              Icon(
-                Icons.home_rounded,
-                size: 32,
-                color: Colors.white,
-              ),
-              Icon(
-                Icons.bar_chart_rounded,
-                size: 40,
-                color: Colors.white,
-              ),
-            ],
-            onTap: (index) {
-              Get.find<BaseController>().updateBase(newCurrentPage: index);
-            },
+            body: _body.elementAt(_.currentPage),
+            bottomNavigationBar: CurvedNavigationBar(
+              height: 70,
+              index: _.currentPage,
+              animationDuration: Duration(milliseconds: 500),
+              backgroundColor: kBackgroundColor,
+              color: kPrimaryColor,
+              items: <Widget>[
+                Icon(
+                  Icons.data_usage_rounded,
+                  size: 34,
+                  color: Colors.white,
+                ),
+                Icon(
+                  Icons.home_rounded,
+                  size: 32,
+                  color: Colors.white,
+                ),
+                Icon(
+                  Icons.bar_chart_rounded,
+                  size: 40,
+                  color: Colors.white,
+                ),
+              ],
+              onTap: (index) {
+                Get.find<BaseController>().updateBase(newCurrentPage: index);
+              },
+            ),
           ),
         );
       },
     );
+  }
+
+  Future<bool> closeApp() async {
+    SystemNavigator.pop();
+    return true;
   }
 }

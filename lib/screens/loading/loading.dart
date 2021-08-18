@@ -8,6 +8,7 @@ import 'package:coronavirus/screens/loading/get-data.dart';
 import 'package:coronavirus/screens/loading/sections/logo.dart';
 import 'package:coronavirus/screens/loading/sections/retry-button.dart';
 import 'package:coronavirus/screens/loading/sections/spin-kit.dart';
+import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:flutter/material.dart';
 
@@ -39,18 +40,21 @@ class _LoadingScreenState extends State<LoadingScreen> {
     setSystemUIOverlayStyle(systemUIOverlayStyle: SystemUIOverlayStyle.LIGHT);
     return GetBuilder<LoadingController>(
       builder: (_) {
-        return Scaffold(
-          backgroundColor: Colors.white,
-          body: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              SizedBox(),
-              SizedBox(),
-              Center(child: LoadingLogo()),
-              SizedBox(),
-              ShowLoading(_.loadingStatus),
-              SizedBox(),
-            ],
+        return WillPopScope(
+          onWillPop: closeApp,
+          child: Scaffold(
+            backgroundColor: Colors.white,
+            body: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                SizedBox(),
+                SizedBox(),
+                Center(child: LoadingLogo()),
+                SizedBox(),
+                ShowLoading(_.loadingStatus),
+                SizedBox(),
+              ],
+            ),
           ),
         );
       },
@@ -76,5 +80,10 @@ class _LoadingScreenState extends State<LoadingScreen> {
       Get.find<LoadingController>()
           .updateLoading(newFirstEnterStatus: firstEnter);
     });
+  }
+
+  Future<bool> closeApp() async {
+    SystemNavigator.pop();
+    return true;
   }
 }
