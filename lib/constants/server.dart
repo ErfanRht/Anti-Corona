@@ -1,1 +1,1 @@
-const serverAddress = "https://anticorona.pythonanywhere.com/";
+const serverAddress = ""; // This data is private.

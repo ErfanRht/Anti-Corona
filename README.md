@@ -1,16 +1,45 @@
-# anti_corona
+# Anti Corona
 
-A new Flutter project.
+> An open source mobile application about "Counter Corona" using Dart language and Flutter framework.
 
-## Getting Started
+## Screenrecords
 
-This project is a starting point for a Flutter application.
+<p float="left">
+  <img src="https://github.com/ErfanRht/Anti-Corona/blob/master/screenshots/videos/Screenrecord.gif?raw=true" height="600" />
+  &ensp;
+</p>
 
-A few resources to get you started if this is your first Flutter project:
+## Screenshots
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+<p float="left">
+    <img src="./screenshots/Screenshot1.jpg" height="400" />
+  &ensp;
+      <img src="./screenshots/Screenshot2.jpg" height="400" />
+  &ensp;
+      <img src="./screenshots/Screenshot3.jpg" height="400" />
+  &ensp;
+    <img src="./screenshots/Screenshot4.jpg" height="400" />
+  &ensp;
+</p>
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+[more screenshot...](./screenshots)
+
+## Issues
+
+Please file any issues, bugs or feature request [here](https://github.com/ErfanRht/Anti-Corona/issues).
+
+## License
+
+This project is licensed under the [MIT License](https://github.com/ErfanRht/Anti-Corona/blob/master/LICENSE.txt)
+
+## Author
+
+This Flutter project is developed by [Erfan Rahmati](https://github.com/ErfanRht).
+
+---
+
+<div align="center">
+
+### Show some ❤️ by starring 🌟 the repository!
+
+</div>

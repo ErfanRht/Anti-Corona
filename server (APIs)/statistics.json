@@ -1,0 +1,22 @@
+{
+  "iran": {
+    "total_cases": "5,442,232",
+    "total_deaths": "117,526",
+    "total_recovered": "4,792,117",
+    "active_cases": "532,589",
+    "serious_cases": "63,802",
+    "new_cases": "17,397",
+    "new_deaths": "344",
+    "new_recovered": "27,119"
+  },
+  "global": {
+    "total_cases": "228,916,074",
+    "total_deaths": "4,699,370",
+    "total_recovered": "205,514,420",
+    "active_cases": "18,702,284",
+    "serious_cases": "99,595",
+    "new_cases": "422,806",
+    "new_deaths": "6,866",
+    "new_recovered": "458,058"
+  }
+}
