@@ -12,13 +12,13 @@
 ## Screenshots
 
 <p float="left">
-    <img src="./screenshots/Screenshot1.jpg" height="400" />
+    <img src="./screenshots/Screenshot1.jpeg" height="400" />
   &ensp;
-      <img src="./screenshots/Screenshot2.jpg" height="400" />
+      <img src="./screenshots/Screenshot2.jpeg" height="400" />
   &ensp;
-      <img src="./screenshots/Screenshot3.jpg" height="400" />
+      <img src="./screenshots/Screenshot3.jpeg" height="400" />
   &ensp;
-    <img src="./screenshots/Screenshot4.jpg" height="400" />
+    <img src="./screenshots/Screenshot4.jpeg" height="400" />
   &ensp;
 </p>
 
