@@ -2,8 +2,6 @@
 
 > An open source mobile application about "Counter Corona" using Dart language and Flutter framework.
 
-> Language: Persian (The English version is not currently available)
-
 ## Screenrecords
 
 <p float="left">
@@ -25,6 +23,10 @@
 </p>
 
 [more screenshot...](./screenshots)
+
+## Language
+
+Persian (The English version is not currently available)
 
 ## Issues
 
