@@ -30,7 +30,7 @@ Please file any issues, bugs or feature request [here](https://github.com/ErfanR
 
 ## License
 
-This project is licensed under the [MIT License](https://github.com/ErfanRht/Anti-Corona/blob/master/LICENSE.txt)
+This project is licensed under the [MIT License](https://github.com/ErfanRht/Anti-Corona/blob/master/LICENSE)
 
 ## Author
 
