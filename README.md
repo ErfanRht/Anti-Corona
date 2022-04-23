@@ -2,27 +2,17 @@
 
 > An open source mobile application about "Counter Corona" using Dart language and Flutter framework.
 
+<p float="left">
+    <img src="./screenshots/mockups/Anti-Corona.jpg" height="400" />
+  &ensp;
+</p>
+
 ## Screenrecords
 
 <p float="left">
   <img src="https://github.com/ErfanRht/Anti-Corona/blob/master/screenshots/videos/Screenrecord.gif?raw=true" height="600" />
   &ensp;
 </p>
-
-## Screenshots
-
-<p float="left">
-    <img src="./screenshots/Screenshot1.jpeg" height="400" />
-  &ensp;
-      <img src="./screenshots/Screenshot2.jpeg" height="400" />
-  &ensp;
-      <img src="./screenshots/Screenshot3.jpeg" height="400" />
-  &ensp;
-    <img src="./screenshots/Screenshot4.jpeg" height="400" />
-  &ensp;
-</p>
-
-[more screenshot...](./screenshots)
 
 ## Language
 
